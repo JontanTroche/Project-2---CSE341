@@ -1,0 +1,34 @@
+### GET Albums
+GET http://localhost:3000/albums
+
+### GET One Album (Replace with valid ID)
+GET http://localhost:3000/albums/65afca9a9c9f2b1d3a4e5f60
+
+### POST Create Album
+POST http://localhost:3000/albums
+Content-Type: application/json
+
+{
+    "title": "New Album Test",
+    "releaseYear": 2024,
+    "type": "Studio",
+    "tracklist": ["Track 1", "Track 2"],
+    "totalDuration": "45:00",
+    "members": ["Member 1", "Member 2"]
+}
+
+### PUT Update Album (Replace with valid ID from POST result)
+PUT http://localhost:3000/albums/REPLACE_WITH_ID
+Content-Type: application/json
+
+{
+    "title": "Updated Album Test",
+    "releaseYear": 2025,
+    "type": "Live",
+    "tracklist": ["Track 1", "Track 2", "Track 3"],
+    "totalDuration": "50:00",
+    "members": ["Member 1", "Member 2"]
+}
+
+### DELETE Album (Replace with valid ID)
+DELETE http://localhost:3000/albums/REPLACE_WITH_ID
