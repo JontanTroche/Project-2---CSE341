@@ -8,10 +8,8 @@ const doc = {
     host: 'localhost:3000',
     schemes: ['http', 'https'],
     tags: [
-        {
-            name: 'Albums',
-            description: 'Album management'
-        }
+        { name: 'Albums', description: 'Album management' },
+        { name: 'Members', description: 'Member management' }
     ]
 };
 
