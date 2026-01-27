@@ -5,7 +5,7 @@
     "description": "API for managing albums",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "project-2-cse341.onrender.com",
   "basePath": "/",
   "tags": [
     {
@@ -18,8 +18,8 @@
     }
   ],
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
