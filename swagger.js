@@ -6,7 +6,7 @@ const doc = {
         description: 'API for managing albums'
     },
     host: 'project-2-cse341.onrender.com',
-    schemes: ['https'],
+    schemes: ['https', 'http'],
     tags: [
         { name: 'Albums', description: 'Album management' },
         { name: 'Members', description: 'Member management' }
