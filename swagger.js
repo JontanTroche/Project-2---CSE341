@@ -7,7 +7,7 @@ const doc = {
     },
     host: 'project-2-cse341.onrender.com',
     //host: 'localhost:3000',
-    schemes: ['https'],
+    schemes: ['https', 'http'],
     tags: [
         { name: 'Albums', description: 'Album management' },
         { name: 'Members', description: 'Member management' }

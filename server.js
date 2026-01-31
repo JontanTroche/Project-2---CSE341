@@ -61,6 +61,8 @@ app.get('/github/callback', passport.authenticate('github', {
         res.redirect('/');
     });
 
+app.set('trust proxy', 1);
+
 mongodb.initDb((err) => {
     if (err) {
         console.log(err);
