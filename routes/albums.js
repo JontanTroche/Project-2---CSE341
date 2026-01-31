@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const albumsController = require('../controllers/albums');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', (req, res, next) => {
     // #swagger.tags = ['Albums']
@@ -12,17 +13,17 @@ router.get('/:id', (req, res, next) => {
     next();
 }, albumsController.getOneAlbum);
 
-router.post('/', (req, res, next) => {
+router.post('/', isAuthenticated, (req, res, next) => {
     // #swagger.tags = ['Albums']
     next();
 }, albumsController.createAlbum);
 
-router.put('/:id', (req, res, next) => {
+router.put('/:id', isAuthenticated, (req, res, next) => {
     // #swagger.tags = ['Albums']
     next();
 }, albumsController.updateAlbum);
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', isAuthenticated, (req, res, next) => {
     // #swagger.tags = ['Albums']
     next();
 }, albumsController.deleteAlbum);
