@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 const app = express();
+app.set('trust proxy', 1);
 const passport = require('passport');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -62,11 +63,18 @@ app.get('/github/callback', passport.authenticate('github', {
     failureRedirect: '/api-docs', session: false
 }),
     (req, res) => {
+        console.log('--- Callback Reached ---');
+        console.log('Passport User:', req.user);
         req.session.user = req.user;
-        res.redirect('/');
+        req.session.save((err) => {
+            if (err) {
+                console.error('Session Save Error:', err);
+            }
+            console.log('Session saved with user:', req.session.user);
+            res.redirect('/');
+        });
     });
 
-app.set('trust proxy', 1);
 
 mongodb.initDb((err) => {
     if (err) {
